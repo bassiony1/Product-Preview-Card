@@ -1,0 +1,143 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  --Soft-blue: hsl(215, 51%, 70%);
+  --Cyan: hsl(178, 100%, 50%);
+  --Very-dark-blue-main: hsl(217, 54%, 11%);
+  --Very-dark-blue-card: hsl(216, 50%, 16%);
+  --Very-dark-blue-line: hsl(215, 32%, 27%);
+  --White: hsl(0, 0%, 100%);
+  font-size: 63.5%;
+  font-family: "Outfit", sans-serif;
+}
+body {
+  background-color: var(--Very-dark-blue-main);
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.preview-card {
+  background-color: var(--Very-dark-blue-card);
+  padding: 2rem;
+  width: 30%;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 385px;
+  min-width: 288px;
+}
+.card__img {
+  width: 100%;
+  border-radius: 1rem;
+}
+.card__header {
+  position: relative;
+}
+.card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.card__header::after,
+.card__header::before {
+  content: "";
+  transition: background-color 0.6s ease-in-out;
+}
+.card__header:hover.card__header::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  top: 0;
+  left: 0;
+  border-radius: 1rem;
+  opacity: 0.5;
+  background-color: rgb(5, 251, 251);
+  cursor: pointer;
+}
+.card__header:hover.card__header.card__header::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-image: url("images/icon-view.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+.card__title {
+  color: var(--White);
+  font-size: 2.4rem;
+}
+
+.card__description {
+  font-size: 1.6rem;
+  color: var(--Soft-blue);
+  opacity: 0.4;
+}
+.card__details {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card__price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: var(--Cyan);
+  gap: 1rem;
+}
+.card__duration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  color: var(--Soft-blue);
+  gap: 1rem;
+  opacity: 0.8;
+}
+.card__line {
+  background-color: var(--Very-dark-blue-line);
+  height: 0.21rem;
+  width: 100%;
+  opacity: 0.5;
+  border-radius: 1rem;
+}
+.card__info {
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+.card__avatar {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 0.1rem solid var(--White);
+}
+.card__info mark {
+  background-color: transparent;
+  color: var(--White);
+  margin-left: 0.2rem;
+}
+.card__info mark:hover,
+.card__title:hover {
+  color: var(--Cyan);
+  cursor: pointer;
+}
+.card__owner {
+  color: var(--Soft-blue);
+  opacity: 0.8;
+}
